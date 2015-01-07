@@ -23,10 +23,15 @@ angular.module('Eggly', [
 
     $scope.currentCategory = null;
 
+    function isCurrentCategory(category) {
+        return $scope.currentCategory !== null && category.name == $scope.currentCategory.name;
+    }
+
     function setCurrentCategory(category) {
         $scope.currentCategory = category;
     }
 
     $scope.setCurrentCategory = setCurrentCategory;
+    $scope.isCurrentCategory = isCurrentCategory;
 })
 ;
