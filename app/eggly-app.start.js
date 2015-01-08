@@ -79,6 +79,14 @@ angular.module('Eggly', [
     $scope.updateBookmark = updateBookmark;
     $scope.isSelectedBookmark = isSelectedBookmark;
 
+    function deleteBookmark(bookmark) {
+        _.remove($scope.bookmarks, function(b) {
+            return b.id == bookmark.id;
+        });
+    }
+
+    $scope.deleteBookmark = deleteBookmark;
+
     //create and edit
     $scope.isCreating = false;
     $scope.isEditing = false;
