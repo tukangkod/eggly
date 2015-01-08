@@ -3,7 +3,7 @@
 </a>
 <ul class="nav nav-sidebar">
     <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}">
-        <a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
+        <a ui-sref="eggly.categories.bookmarks({category:category.name})" ng-click="setCurrentCategory(category)">{{category.name}}</a>
     </li>
 </ul>
 

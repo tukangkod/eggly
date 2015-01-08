@@ -14,7 +14,7 @@ angular.module('Eggly', [
 
     $urlRouterProvider.otherwise('/');
 })
-.controller('MainCtrl', function($scope) {
+.controller('MainCtrl', function($scope, $state) {
     $scope.categories = [
         {"id": 0, "name": "Development"},
         {"id": 1, "name": "Design"},
@@ -42,6 +42,8 @@ angular.module('Eggly', [
 
     function setCurrentCategory(category) {
         $scope.currentCategory = category;
+
+        //$state.go('', {category:category.name});
 
         cancelEditing();
         cancelCreating();
