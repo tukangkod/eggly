@@ -7,13 +7,17 @@ angular.module('categories', [
         url:'/',
         views: {
             'categories@': {
-                controller: 'CategoriesCtrl',
+                controller: 'CategoriesListCtrl as categoriesListCtrl',
                 templateUrl: 'app/categories/categories.tmpl.html'
             }
         }
     })
 })
-.controller('CategoriesCtrl', function($scope) {
-console.log('controllerCtrl');
+.controller('CategoriesListCtrl', function CategoriesCtrl(CategoriesModel) {
+    var categoriesListCtrl = this;
+    CategoriesModel.getCategories()
+    .then(function(result) {
+        categoriesListCtrl.categories = result;
+    });
 })
 ;
