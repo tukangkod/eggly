@@ -1,6 +1,19 @@
 angular.module('Eggly', [
+    'ui.router',
+    'categories',
+    'categories.bookmarks'
 
 ])
+.config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('eggly', {
+            url:'',
+            abstract: true
+        })
+    ;
+
+    $urlRouterProvider.otherwise('/');
+})
 .controller('MainCtrl', function($scope) {
     $scope.categories = [
         {"id": 0, "name": "Development"},
